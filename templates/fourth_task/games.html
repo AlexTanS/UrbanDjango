@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'fourth_task/menu.html' %}
 
-<h1>{{ title }}</h1>
+{% block title %}{{ pagename }}{% endblock %}
+
+{% block pagename %}{{ pagename }}{% endblock %}
+
+{% block menu %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
 <ul>
-    {% for game in list_games %}
+    {% for game in list_games.games %}
     <li>{{ game }}
         <button>Купить</button>
     </li>
     {% endfor %}
 </ul>
-<form action="{% url 'platform' %}" method="get">
-    <button type="submit">Вернуться обратно</button>
-</form>
+{% endblock %}
 
-</body>
-</html>

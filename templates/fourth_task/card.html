@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'fourth_task/menu.html' %}
 
-<h3>{{ text }}</h3>
-<form action="{% url 'platform' %}" method="get">
-    <button type="submit">Вернуться обратно</button>
-</form>
+{% block title %}{{ pagename }}{% endblock %}
 
-</body>
-</html>
+{% block pagename %}{{ pagename }}{% endblock %}
+
+{% block menu %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h2>{{ text }}</h2>
+{% endblock %}
+

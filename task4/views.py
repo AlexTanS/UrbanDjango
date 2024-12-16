@@ -2,45 +2,30 @@ from django.shortcuts import render
 
 
 def card_page(request):
-    title = "Корзина"
+    pagename = "Корзина"
     text = "Извините, Ваша корзина пуста"
     context = {
-        "title": title,
+        "pagename": pagename,
         "text": text,
     }
     return render(request, "fourth_task/card.html", context)
 
 
 def games_page(request):
-    title = "Игры"
+    pagename = "Игры"
     list_games = {
         "games": ["Пасьянс", "Паук", "Дурак", "Блэкджек"]
     }
     context = {
-        "title": title,
+        "pagename": pagename,
         "list_games": list_games,
     }
     return render(request, "fourth_task/games.html", context)
 
 
 def platform_page(request):
-    title = "Главная страница"
-    texts = [
-        {
-            "slug": "platform",
-            "text": "Главная",
-        },
-        {
-            "slug": "games",
-            "text": "Магазин",
-        },
-        {
-            "slug": "card",
-            "text": "Корзина",
-        },
-    ]
+    pagename = "Главная страница"
     context = {
-        "title": title,
-        "texts": texts,
+        "pagename": pagename,
     }
     return render(request, "fourth_task/platform.html", context)
